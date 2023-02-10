@@ -8,7 +8,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  MySnackbar(message, context) {
+  mySnackbar(message, context) {
     return ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
   }
@@ -49,10 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-        ElevatedButton(onPressed: (){}, child: const Text("Click here!"))
+      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  mySnackbar("You Clicked Here!", context);
+                },
+                child: const Text("Click here!")))
       ]),
     );
   }
