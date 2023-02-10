@@ -8,9 +8,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  mySnackbar(message, context) {
-    return ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text(message)));
+  showAlertDialog(context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Expanded(
+              child: AlertDialog(
+            title: Text("Alert!"),
+            content: Text("Do you realy want to exit?"),
+          ));
+        });
   }
 
   @override
@@ -53,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Center(
             child: ElevatedButton(
                 onPressed: () {
-                  mySnackbar("You Clicked Here!", context);
+                  showAlertDialog(context);
                 },
                 child: const Text("Click here!")))
       ]),
