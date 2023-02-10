@@ -19,27 +19,6 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Hello World!"),
         centerTitle: true,
-        elevation: 0,
-        actions: [
-          InkWell(
-              onTap: () {
-                MySnackbar("Chat Icon", context);
-              },
-              child: const Icon(Icons.chat)),
-              const SizedBox(width: 10,),
-          InkWell(
-              onTap: () {
-                MySnackbar("Settings Icon", context);
-              },
-              child: const Icon(Icons.settings)),
-              const SizedBox(width: 10,),
-          InkWell(
-              onTap: () {
-                MySnackbar("Person Icon", context);
-              },
-              child: const Icon(Icons.person)),
-              const SizedBox(width: 5,),
-        ],
       ),
       drawer: Drawer(
         child: ListView(
