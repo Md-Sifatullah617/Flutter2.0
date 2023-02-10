@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -17,8 +18,16 @@ class _MyHomePageState extends State<MyHomePage> {
             title: const Text("Alert!"),
             content: const Text("Do you realy want to exit?"),
             actions: [
-                TextButton(onPressed: (){}, child: const Text("No")),
-                TextButton(onPressed: (){}, child: const Text("Yes"))
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text("No")),
+              TextButton(
+                  onPressed: () {
+                    SystemNavigator.pop();
+                  },
+                  child: const Text("Yes"))
             ],
           ));
         });
