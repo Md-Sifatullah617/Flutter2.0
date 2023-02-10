@@ -14,8 +14,12 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (BuildContext context) {
           return Expanded(
               child: AlertDialog(
-            title: Text("Alert!"),
-            content: Text("Do you realy want to exit?"),
+            title: const Text("Alert!"),
+            content: const Text("Do you realy want to exit?"),
+            actions: [
+                TextButton(onPressed: (){}, child: const Text("No")),
+                TextButton(onPressed: (){}, child: const Text("Yes"))
+            ],
           ));
         });
   }
