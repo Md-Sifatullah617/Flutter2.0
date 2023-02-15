@@ -9,30 +9,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  showAlertDialog(context) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return Expanded(
-              child: AlertDialog(
-            title: const Text("Alert!"),
-            content: const Text("Do you realy want to exit?"),
-            actions: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text("No")),
-              TextButton(
-                  onPressed: () {
-                    SystemNavigator.pop();
-                  },
-                  child: const Text("Yes"))
-            ],
-          ));
-        });
-  }
-
+  var ListItem = [
+    {"image":"","title":""}
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,12 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  showAlertDialog(context);
-                },
-                child: const Text("Click here!")))
+        
       ]),
     );
   }
