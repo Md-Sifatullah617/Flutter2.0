@@ -95,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
                 margin: const EdgeInsets.all(10),
                 width: double.infinity,
+                height: 200,
             ),
           );
         }));
