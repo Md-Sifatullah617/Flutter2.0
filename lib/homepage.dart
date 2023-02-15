@@ -87,7 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        body: ListView.builder(itemBuilder: (context, index) {
+        body: ListView.builder(
+            itemCount: ListItem.length,
+            itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
               
@@ -96,6 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: const EdgeInsets.all(10),
                 width: double.infinity,
                 height: 200,
+                child: Image.network(ListItem[index]['image']!, fit: BoxFit.fill,),
             ),
           );
         }));
