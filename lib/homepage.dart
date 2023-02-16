@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                    
+                  showSnackbar(context, listItem[index]['title']);
                 },
                 child: Container(
                   margin: const EdgeInsets.all(10),
