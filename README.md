@@ -1,16 +1,8 @@
-# rabiil_hasan
+# Ostad Assignment
 
-A new Flutter project.
+here to view the selected assignment --------------
+1. delete the lib folder and pubsec.yml file
+2. extract zip file
+ or you can just download the selected assignment zip file and do rest of the process by yourself
+ every zip folder contains lib and pubsec.yml
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
