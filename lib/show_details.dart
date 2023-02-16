@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DetailsOnTap extends StatelessWidget {
-  const DetailsOnTap({super.key});
+  final String items;
+  const DetailsOnTap({super.key,required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +12,14 @@ class DetailsOnTap extends StatelessWidget {
         centerTitle: true,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-            
+            Center(child: Text(items, style: const TextStyle(
+                fontSize: 25
+            ),))
         ],
       ),
     );
   }
 }
+
