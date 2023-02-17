@@ -8,7 +8,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List todoList = [];
+  final txtController = TextEditingController();
+  List todoList = [
+    "1",
+    "1",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Expanded(
                           child: TextFormField(
+                            controller: txtController,
                         decoration:
                             const InputDecoration(border: OutlineInputBorder()),
                       )),
@@ -38,11 +43,31 @@ class _MyHomePageState extends State<MyHomePage> {
                       )
                     ],
                   )),
+              const SizedBox(
+                height: 20,
+              ),
               Expanded(
                   flex: 90,
                   child: ListView.builder(
                       itemCount: todoList.length,
-                      itemBuilder: (context, index) {}))
+                      itemBuilder: (context, index) {
+                        return Card(
+                          child: Row(
+                            children: [
+                              Expanded(flex: 80, child: Text("Item")),
+                              Expanded(
+                                  flex: 20,
+                                  child: IconButton(
+                                    icon: Icon(
+                                      Icons.delete,
+                                      color: Colors.red,
+                                    ),
+                                    onPressed: () {},
+                                  )),
+                            ],
+                          ),
+                        );
+                      }))
             ],
           ),
         ));
