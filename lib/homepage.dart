@@ -20,6 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: [
               Expanded(
+                flex: 10,
                   child: Row(
                 children: [
                   Expanded(
@@ -36,7 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ],
               )),
-              Expanded(child: Column())
+              Expanded(
+                flex: 90,
+                child: Column())
             ],
           ),
         ));
