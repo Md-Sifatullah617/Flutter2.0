@@ -9,12 +9,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final txtController = TextEditingController();
-  List todoList = [
-  ];
+  List todoList = [];
 
   addValue(value) {
     setState(() {
       todoList.add({'item': value});
+    });
+  }
+
+  removeValue(value) {
+    setState(() {
+      todoList.removeAt(value);
     });
   }
 
@@ -61,15 +66,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         return Card(
                           child: Row(
                             children: [
-                              Expanded(flex: 80, child: Text(todoList[index]['item'].toString())),
+                              Expanded(
+                                  flex: 80,
+                                  child:
+                                      Text(todoList[index]['item'].toString())),
                               Expanded(
                                   flex: 20,
                                   child: IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.delete,
                                       color: Colors.red,
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      removeValue(index);
+                                    },
                                   )),
                             ],
                           ),
