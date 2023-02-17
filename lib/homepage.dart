@@ -23,8 +23,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                 children: [
                   Expanded(
-                    child: TextFormField(),
+                    child: TextFormField(
+                        decoration: const InputDecoration(
+                            border: OutlineInputBorder()
+                        ),
+                    )
                   ),
+                  const SizedBox(width: 15,),
                   FloatingActionButton(
                     onPressed: () {},
                     child: const Icon(Icons.add),
