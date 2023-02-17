@@ -10,9 +10,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final txtController = TextEditingController();
   List todoList = [
-    "1",
-    "1",
   ];
+
+  addValue(value) {
+    setState(() {
+      todoList.add({'item': value});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Expanded(
                           child: TextFormField(
-                            controller: txtController,
+                        controller: txtController,
                         decoration:
                             const InputDecoration(border: OutlineInputBorder()),
                       )),
@@ -38,7 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 15,
                       ),
                       FloatingActionButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          addValue(txtController.text);
+                        },
                         child: const Icon(Icons.add),
                       )
                     ],
@@ -54,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         return Card(
                           child: Row(
                             children: [
-                              Expanded(flex: 80, child: Text("Item")),
+                              Expanded(flex: 80, child: Text(todoList[index]['item'].toString())),
                               Expanded(
                                   flex: 20,
                                   child: IconButton(
