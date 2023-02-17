@@ -15,9 +15,25 @@ class _MyHomePageState extends State<MyHomePage> {
           title: const Text("To-Do App"),
           centerTitle: true,
         ),
-        body: Column(
-            children: [],
-        )
-        );
+        body: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            children: [
+              Expanded(
+                  child: Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(),
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {},
+                    child: const Icon(Icons.add),
+                  )
+                ],
+              )),
+              Expanded(child: Column())
+            ],
+          ),
+        ));
   }
 }
