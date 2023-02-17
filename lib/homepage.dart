@@ -8,6 +8,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List todoList = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,26 +21,28 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: [
               Expanded(
-                flex: 10,
+                  flex: 10,
                   child: Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                        decoration: const InputDecoration(
-                            border: OutlineInputBorder()
-                        ),
-                    )
-                  ),
-                  const SizedBox(width: 15,),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: const Icon(Icons.add),
-                  )
-                ],
-              )),
+                    children: [
+                      Expanded(
+                          child: TextFormField(
+                        decoration:
+                            const InputDecoration(border: OutlineInputBorder()),
+                      )),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      FloatingActionButton(
+                        onPressed: () {},
+                        child: const Icon(Icons.add),
+                      )
+                    ],
+                  )),
               Expanded(
-                flex: 90,
-                child: Column())
+                  flex: 90,
+                  child: ListView.builder(
+                      itemCount: todoList.length,
+                      itemBuilder: (context, index) {}))
             ],
           ),
         ));
